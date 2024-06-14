@@ -75,7 +75,7 @@ i.fa-location-arrow {
 }
 
 .my-loader {
-  display: none;
+
   background-color: rgba(231, 231, 231, 0.574);
   border-radius: 20px;
   position: absolute;
@@ -137,7 +137,6 @@ i.fa-location-arrow {
 }
 
 .alert-warning , .alert-danger {
-  display: none;
   margin-top: 15px;
   z-index: 100;
   left: 50%;

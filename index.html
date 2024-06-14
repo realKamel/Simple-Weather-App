@@ -63,19 +63,25 @@
 				</div>
 			</div>
 		</section>
-		<div class="alert rounded-4 position-absolute alert-warning alert-dismissible fade show w-75 mx-auto" role="alert">
-			<strong>Holy guacamole!</strong> You should check in on some of those fields below.
-			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-		  </div>
-		<div class="alert alert-danger rounded-4  position-absolute alert-dismissible fade show w-75 mx-auto" role="alert">
-			<strong>Holy guacamole!</strong> You should check in on some of those fields below.
-			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-		  </div>
+		<div
+			class="alert rounded-4 position-absolute d-none alert-warning alert-dismissible fade show w-75 mx-auto"
+			role="alert">
+			<strong>Holy guacamole!</strong> You should check in on some of those fields
+			below.
+			<button type="button" class="btn-close" data-bs-dismiss="alert"
+				aria-label="Close"></button>
+		</div>
+		<div
+			class="alert alert-danger rounded-4 d-none  position-absolute alert-dismissible fade show w-75 mx-auto"
+			role="alert">
+			<strong>Something Went Wrong</strong> You should retry another time.
+			<button type="button" class="btn-close" data-bs-dismiss="alert"
+				aria-label="Close"></button>
+		</div>
 		<section id="weatherInfo">
-
 			<div
 				class="my-container col-10 mx-auto bg-body-tertiary mb-4 rounded-4 shadow-sm p-3 position-relative">
-				<div class="my-loader">
+				<div class="my-loader d-none">
 					<span class="loader"></span>
 				</div>
 				<div class="row justify-content-center align-items-center g-2">
@@ -84,19 +90,19 @@
 							<div class="location">
 								<div class="content text-center ">
 									<i class="fa-regular fa-map me-2"></i>
-									<span>NewYork</span>
+									<span class="my-city"></span>
 								</div>
 							</div>
 							<div class="date">
 								<div class="content text-center ">
-									<p>Today , 28 Sept</p>
+									<p></p>
 								</div>
 							</div>
 						</div>
 						<div class="degree text-center">
-							<span class="my-degree">27°</span><span>C</span>
+							<span class="my-degree"></span><span>C</span>
 							<div class="kind">
-								<span class="icon"><i class="fa-regular fa-sun"></i></span>
+								<span class="icon"><img alt></span>
 								<span class="kind-name">Sunny</span>
 							</div>
 						</div>
@@ -136,11 +142,13 @@
 									class="wind bg-white text-center rounded-4 shadow-sm p-3 px-3">
 									<div class="title d-flex justify-content-between">
 										<span class="fw-bold">Wind</span>
-										<span class="icon"><i class="fa-solid fa-wind"></i></span>
+										<span class="icon">
+											<i class="fa-solid fa-wind"></i>
+										</span>
 									</div>
 									<div
 										class="my-card-body d-flex align-items-center justify-content-center">
-										<p class="fs-2 fw-bold pt-2">18km/h</p>
+										<span class="fs-1 fw-bold pt-2 wind-speed">18</span><span class="fs-3 pt-2">km/h</span>
 									</div>
 								</div>
 							</div>
@@ -148,12 +156,13 @@
 								<div
 									class="wind bg-white text-center rounded-4 shadow-sm p-3 px-3">
 									<div class="title d-flex justify-content-between">
-										<span>Chance of Rain</span>
+										<span>Humidity</span>
 										<span class="icon"><i class="fa-solid fa-umbrella"></i></span>
 									</div>
 									<div
 										class="my-card-body  ">
-										<p class="fs-1 fw-bold pt-2">75 %</p>
+										<span class="fs-1 fw-bold pt-2 rain-chance">75</span>
+										<span class="fs-2  pt-2">%</span>
 
 									</div>
 								</div>
@@ -166,10 +175,10 @@
 										<span class="icon"><i class="fa-regular fa-compass"></i></span>
 									</div>
 									<div
-										class="my-card-body  w-100">
-										<p class="fs-3 fw-bold pt-2 w-100">North</p>
+										class="my-card-body w-100">
+										<p class="fs-3 fw-bold pt-2 w-100 wind-dir">North</p>
 										<p class="w-100">N</p>
-										<div><i class="fa-solid fa-location-arrow"></i></div>
+										<div><i class="fa-solid fa-location-arrow wind-arr"></i></div>
 									</div>
 								</div>
 							</div>
