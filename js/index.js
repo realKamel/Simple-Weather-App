@@ -11,6 +11,26 @@ let rainChance = document.querySelector(".rain-chance");
 let windDir = document.querySelector(".wind-dir");
 let windArrow = document.querySelector(".wind-arr");
 
+let directions = {
+	N: "north wind",
+	NNE: "north-northeast wind",
+	NE: "northeast wind ",
+	ENE: "east-northeast wind",
+	E: "east wind",
+	ESE: "east-southeast wind",
+	SE: "southeast wind",
+	SSE: "south-southeast wind ",
+	S: "south wind",
+	SSW: "south-southwest wind ",
+	SW: "southwest wind",
+	WSW: "west-southwest wind",
+	W: "west wind",
+	WNW: "west-northwest wind",
+	NW: "northwest wind",
+	NNW: "north-northwest wind",
+}
+
+
 async function getWeatherData(q) {
 	let response = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=2507a24fdbbf42b28b4130022241306&q=${q}&days=3`);
 	let data = await response.json();
@@ -35,6 +55,8 @@ async function weather(q) {
 		myIcon.src = `https:${data.current.condition.icon}`;
 		windSpeed.innerHTML = `${data.current.wind_kph} `;
 		rainChance.innerHTML = `${data.current.humidity} `;
+		windDir.innerHTML = `${directions[ data.current.wind_dir ]}`;
+		windArrow.style.transform = `rotate(${data.current.wind_degree - 45}deg)`;
 
 	} catch (error) {
 		console.log("Error Happened");
