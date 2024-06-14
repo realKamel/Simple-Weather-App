@@ -8,6 +8,142 @@
   box-sizing: border-box;
 }
 
+:root {
+  --my-grey: #dee2e6;
+  --my-yellow: #f0a500;
+  --my-yellow-dark: #cf7500;
+}
+
+/* 	
+	black
+*/
+
+.my-blur {
+  filter: blur(20px);
+}
+
+nav .nav-item > a.active {
+  border-radius: 5%;
+  border-bottom: black solid 3px;
+}
+
+nav .nav-item:hover :not(active) {
+  border-radius: 5%;
+  border-bottom: black solid 3px;
+}
+
+#floatingSearch {
+  position: relative;
+  border: transparent;
+  outline: none;
+}
+
+#floatingSearch:focus {
+  border: transparent;
+  outline: none !important;
+}
+
+#searchBtn {
+  background: black;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  border: transparent;
+}
+
+.degree span.my-degree {
+  font-size: 7rem;
+  font-weight: bold;
+}
+
+.degree span.my-degree + span {
+  font-size: 4rem;
+}
+
+i.fa-location-arrow {
+  font-size: 3rem;
+  transform: rotate(-45deg);
+}
+
+.my-card-body {
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.my-loader {
+  display: none;
+  background-color: rgba(231, 231, 231, 0.574);
+  border-radius: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(10px);
+  z-index: 100;
+}
+.loader {
+  width: 48px;
+  height: 48px;
+  display: block;
+  margin: 15px auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after,
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 0;
+  background-color: #fff;
+  border-radius: 50%;
+  animation: scale50 1s infinite ease-in-out;
+}
+.loader::before {
+  top: auto;
+  bottom: 0;
+  background-color: #ff3d00;
+  animation-delay: 0.5s;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes scale50 {
+  0%,
+  100% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+
+.alert-warning , .alert-danger {
+  display: none;
+  margin-top: 15px;
+  z-index: 100;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 @media (min-width: 1140px) {
   .container-xxl,
   .container-xl,

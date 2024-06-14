@@ -3,14 +3,182 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Smart Login System</title>
+		<title>Weather App</title>
 		<link rel="stylesheet" href="css/all.min.css" />
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
 		<link rel="stylesheet" href="css/style.css" />
 	</head>
-	<body class="bg-body-secondary">
-		
-		<script src="js/bootstrap.bundle.js"></script>
-		<script src="js/index.js"></script>
-	</body>
-</html>
+	<body class="bg-body-secondary position-relative">
+		<nav
+			class="navbar navbar-expand-lg bg-body-tertiary p-4 rounded-4 shadow-sm">
+			<div class="container">
+				<i class="fa-solid fa-cloud-moon fs-1 text-black me-2"></i>
+				<a class="navbar-brand" href="#">Weather</a>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent"
+					aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav ms-auto mb-2 gap-3 mb-lg-0">
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="#">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">New</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Live cameras</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Photos</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Contact</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<section class="search-bar">
+			<div class="container">
+				<div class="form-floating mb-2 m-auto">
+					<input
+						type="text"
+						class="form-control rounded-4 my-4 shadow-sm"
+						id="floatingSearch"
+						placeholder="London" />
+					<label for="floatingSearch">Search by Name ...</label>
+					<button
+						id="searchBtn"
+						type="button"
+						class="btn btn-primary rounded-3 shadow-sm">
+						Search
+					</button>
+				</div>
+			</div>
+		</section>
+		<div class="alert rounded-4 position-absolute alert-warning alert-dismissible fade show w-75 mx-auto" role="alert">
+			<strong>Holy guacamole!</strong> You should check in on some of those fields below.
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		  </div>
+		<div class="alert alert-danger rounded-4  position-absolute alert-dismissible fade show w-75 mx-auto" role="alert">
+			<strong>Holy guacamole!</strong> You should check in on some of those fields below.
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		  </div>
+		<section id="weatherInfo">
+
+			<div
+				class="my-container col-10 mx-auto bg-body-tertiary mb-4 rounded-4 shadow-sm p-3 position-relative">
+				<div class="my-loader">
+					<span class="loader"></span>
+				</div>
+				<div class="row justify-content-center align-items-center g-2">
+					<div class="col-4 rounded-4">
+						<div class="location-date mt-5">
+							<div class="location">
+								<div class="content text-center ">
+									<i class="fa-regular fa-map me-2"></i>
+									<span>NewYork</span>
+								</div>
+							</div>
+							<div class="date">
+								<div class="content text-center ">
+									<p>Today , 28 Sept</p>
+								</div>
+							</div>
+						</div>
+						<div class="degree text-center">
+							<span class="my-degree">27°</span><span>C</span>
+							<div class="kind">
+								<span class="icon"><i class="fa-regular fa-sun"></i></span>
+								<span class="kind-name">Sunny</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-8 bg-body-secondary p-3 shadow-sm rounded-4 ">
+						<div class="row justify-content-center align-items-center g-2 mb-4">
+							<p class=" fs-5">Upcoming Day forecast</p>
+							<div class="col-6 ">
+								<div
+									class="tomorrow d-flex bg-white rounded-4 shadow-sm justify-content-center align-items-center flex-wrap p-3">
+									<div class="tomorrow-day-name fs-4 w-100 text-center">friday</div>
+									<div class="tomorrow-Hdegree fs-1 w-100 text-center ">54°C</div>
+									<div class="tomorrow-Ldegree w-100 text-center">20°C</div>
+									<div class="tomorrow-kind w-100 text-center">
+										<span class="icon"></span>
+										<span class="name">Sunny</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-6 ">
+								<div
+									class="next-day bg-white rounded-4 shadow-sm justify-content-center align-items-center flex-wrap  p-3">
+									<div class="next-day-name fs-4 w-100 text-center">Saturday</div>
+									<div class="next-Hdegree fs-1 w-100 text-center">54°C</div>
+									<div class="next-Ldegree w-100 text-center">20°C</div>
+									<div class="next-kind w-100 text-center">
+										<span class="icon"></span>
+										<span class="name">Sunny</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row justify-content-center align-items-center g-2">
+							<p class="fs-6 my-3">More Detail About Today's weather</p>
+							<div class="col-4 px-2">
+								<div
+									class="wind bg-white text-center rounded-4 shadow-sm p-3 px-3">
+									<div class="title d-flex justify-content-between">
+										<span class="fw-bold">Wind</span>
+										<span class="icon"><i class="fa-solid fa-wind"></i></span>
+									</div>
+									<div
+										class="my-card-body d-flex align-items-center justify-content-center">
+										<p class="fs-2 fw-bold pt-2">18km/h</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-4 px-2">
+								<div
+									class="wind bg-white text-center rounded-4 shadow-sm p-3 px-3">
+									<div class="title d-flex justify-content-between">
+										<span>Chance of Rain</span>
+										<span class="icon"><i class="fa-solid fa-umbrella"></i></span>
+									</div>
+									<div
+										class="my-card-body  ">
+										<p class="fs-1 fw-bold pt-2">75 %</p>
+
+									</div>
+								</div>
+							</div>
+							<div class="col-4 px-2">
+								<div
+									class="wind bg-white text-center rounded-4 shadow-sm p-3 px-3">
+									<div class="title d-flex justify-content-between">
+										<span>Wind Direction</span>
+										<span class="icon"><i class="fa-regular fa-compass"></i></span>
+									</div>
+									<div
+										class="my-card-body  w-100">
+										<p class="fs-3 fw-bold pt-2 w-100">North</p>
+										<p class="w-100">N</p>
+										<div><i class="fa-solid fa-location-arrow"></i></div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</section>
+			<script src="js/bootstrap.bundle.js"></script>
+			<script src="js/index.js"></script>
+		</body>
+	</html>
