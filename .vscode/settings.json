@@ -3,6 +3,8 @@
 		"forecastday",
 		"Hdegree",
 		"Ldegree",
-		"localtime"
+		"localtime",
+		"maxtemp_c",
+		"mintemp_c"
 	]
 }

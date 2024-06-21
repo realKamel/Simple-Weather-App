@@ -4,22 +4,60 @@
 }
 
 * {
-  font-family: "open-sans";
+  font-family: "open-sans", "Courier New", Courier, monospace;
   box-sizing: border-box;
 }
 
-:root {
-  --my-grey: #dee2e6;
-  --my-yellow: #f0a500;
-  --my-yellow-dark: #cf7500;
+
+
+.rain-sky {
+  background-image: url(../images/rain-sky.svg);
+  background-position: top center;
+  background-size: cover;
 }
-
-/* 	
-	black
-*/
-
-.my-blur {
-  filter: blur(20px);
+.drizzle-sky {
+  background-image: url(../images/Drizzle.jpg);
+  background-position: top right;
+  background-size: cover;
+}
+.blizzard-sky {
+  background-image: url(../images/blizzard.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+.mist-sky {
+  background-image: url(../images/mist-sky.svg);
+  background-position: top left;
+  background-size: cover;
+}
+.overcast-sky {
+  background-image: url(../images/overcast-sky.jpg);
+  background-position: top left;
+  background-size: cover;
+}
+.thunder-sky {
+  background-image: url(../images/thunder-sky.png);
+  background-position: top left;
+  background-size: cover;
+}
+.sleet-sky {
+  background-image: url(../images/sleet.svg);
+  background-position: top left;
+  background-size: cover;
+}
+.cloudy-sky {
+  background-image: url(../images/cloudy.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+.clear-sky , .sunny-sky {
+  background-image: url(../images/clear-sky.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+.contrast-white {
+  color: white;
+  filter: drop-shadow(5px 5px 8px black);
 }
 
 nav .nav-item > a.active {
@@ -27,7 +65,7 @@ nav .nav-item > a.active {
   border-bottom: black solid 3px;
 }
 
-nav .nav-item:hover :not(active) {
+nav .nav-item:hover :not(.active) {
   border-radius: 5%;
   border-bottom: black solid 3px;
 }
@@ -42,7 +80,6 @@ nav .nav-item:hover :not(active) {
   border: transparent;
   outline: none !important;
 }
-
 #searchBtn {
   background: black;
   position: absolute;
@@ -52,30 +89,7 @@ nav .nav-item:hover :not(active) {
   border: transparent;
 }
 
-.degree span.my-degree {
-  font-size: 7rem;
-  font-weight: bold;
-}
-
-.degree span.my-degree + span {
-  font-size: 4rem;
-}
-
-i.fa-location-arrow {
-  font-size: 3rem;
-  transform: rotate(-45deg);
-}
-
-.my-card-body {
-  height: 10rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
 .my-loader {
-
   background-color: rgba(231, 231, 231, 0.574);
   border-radius: 20px;
   position: absolute;
@@ -136,11 +150,58 @@ i.fa-location-arrow {
   }
 }
 
-.alert-warning , .alert-danger {
+
+.alert-danger {
   margin-top: 15px;
   z-index: 100;
   left: 50%;
   transform: translateX(-50%);
+}
+.degree span.my-degree {
+  font-size: 7rem;
+  font-weight: bold;
+}
+.degree span.my-degree + span {
+  font-size: 4rem;
+}
+
+i.fa-location-arrow {
+  font-size: 3rem;
+  transform: rotate(-45deg);
+  transition: all 0.5s;
+}
+
+footer .icons {
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+footer .icons .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: black 1px solid;
+  transition: all 0.3s;
+}
+footer .icons .icon > i {
+  font-size: 1.2rem;
+  transition: all 0.3s;
+}
+
+footer .icons .icon:hover {
+  background-color: black;
+  color: white;
+}
+
+footer button {
+  background-color: black !important;
+  border: black !important;
 }
 
 @media (min-width: 1140px) {
