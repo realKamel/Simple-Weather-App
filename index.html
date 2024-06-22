@@ -3,6 +3,8 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="Content-Security-Policy"
+			content="upgrade-insecure-requests">
 		<title>Weather App</title>
 		<link rel="stylesheet" href="css/all.min.css" />
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
@@ -76,7 +78,8 @@
 				<div class="my-loader d-none">
 					<span class="loader"></span>
 				</div>
-				<div class="alert alert-danger d-none alert-dismissible fade show" role="alert"
+				<div class="alert alert-danger d-none alert-dismissible fade show"
+					role="alert"
 					id="dangerAlert">
 					<strong>Something Wrong Happened.</strong> Try another Time.
 					<button type="button" class="btn-close" data-bs-dismiss="alert"
