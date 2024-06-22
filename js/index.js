@@ -50,7 +50,7 @@ const skinsList = [
 	"blizzard-sky",
 	"drizzle-sky",
 	"rain-sky",
-	"sunny-sky"
+	"sunny-sky",
 ];
 // to handle user location
 let userLocation = sessionStorage.getItem( "userLocation" );
@@ -99,8 +99,7 @@ async function getWeatherData ( q ) {
 			throw new Error( `HTTP error! status: ${ response.status }` );
 		}
 		if ( response.status !== 200 ) {
-			if ( data.error.code === 1006 )
-				console.log( "No matching location found." );
+			if ( data.error.code === 1006 ) console.log( "No matching location found." );
 			console.log( dangerAlert );
 			dangerAlert.classList.remove( "d-none" );
 		}
@@ -142,20 +141,26 @@ async function weather ( q ) {
 		console.log( "writing data to html" );
 
 		await changeSkin( data.current.condition.text.toLowerCase() );
-		await updateForecast( {
-			dayName: tomorrowDayName,
-			hDegree: tomorrowHDegree,
-			lDegree: tomorrowLDegree,
-			kindIcon: tomorrowKindIcon,
-			kindName: tomorrowKindName
-		}, tomorrowObj );
-		await updateForecast( {
-			dayName: nextDayName,
-			hDegree: nextHDegree,
-			lDegree: nextLDegree,
-			kindIcon: nextKindIcon,
-			kindName: nextKindName
-		}, nextDayObj );
+		await updateForecast(
+			{
+				dayName: tomorrowDayName,
+				hDegree: tomorrowHDegree,
+				lDegree: tomorrowLDegree,
+				kindIcon: tomorrowKindIcon,
+				kindName: tomorrowKindName,
+			},
+			tomorrowObj
+		);
+		await updateForecast(
+			{
+				dayName: nextDayName,
+				hDegree: nextHDegree,
+				lDegree: nextLDegree,
+				kindIcon: nextKindIcon,
+				kindName: nextKindName,
+			},
+			nextDayObj
+		);
 
 		console.log( "done all working" );
 	} catch ( error ) {
@@ -170,17 +175,16 @@ async function changeSkin ( weatherState ) {
 		if ( myContainer.classList.contains( skin ) )
 			myContainer.classList.remove( skin );
 	}
-	console.log( "Weather Change to", weatherState );
-
+	//console.log( "Weather Change to", weatherState );
 
 	for ( const iterator of skinsList ) {
-		let res = iterator.split( "-" )
+		let res = iterator.split( "-" );
 		if ( weatherState.includes( res[ 0 ] ) ) {
 			console.log( weatherState, res[ 0 ] );
 			myContainer.classList.add( iterator );
 			break;
 		}
-	};
+	}
 }
 
 // for GeoApi and locating user
@@ -189,10 +193,14 @@ if ( userLocation === null ) {
 		const latitude = position.coords.latitude;
 		const longitude = position.coords.longitude;
 		console.log( `Latitude: ${ latitude }, Longitude: ${ longitude }` );
-		sessionStorage.setItem( "userLocation", JSON.stringify( `${ latitude },${ longitude }` ) );
+		sessionStorage.setItem(
+			"userLocation",
+			JSON.stringify( `${ latitude },${ longitude }` )
+		);
 		weather( `${ latitude },${ longitude }` );
 	}
 	function errorCallback ( error ) {
+		weather( "Cairo" );
 		console.warn( `ERROR(${ error.code }): ${ error.message }` );
 	}
 	const options = {
@@ -200,16 +208,17 @@ if ( userLocation === null ) {
 		timeout: 5000, // Timeout after 5 seconds
 		maximumAge: 0, // Do not use cached position
 	};
+	loader.classList.remove( "d-none" );
 	navigator.geolocation.getCurrentPosition(
 		successCallback,
 		errorCallback,
 		options
 	);
+	loader.classList.remove( "d-none" );
 } else {
-	let loc = JSON.parse( userLocation );
-	weather( loc );
+	// if user have the same session it will return his location
+	weather( JSON.parse( userLocation ) );
 }
-
 
 /* To Handel Search and Suggestions for locations */
 searchBtn.addEventListener( "click", function () {
