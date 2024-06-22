@@ -69,22 +69,18 @@
 				</datalist>
 			</div>
 		</section>
-		<div
-			class="alert alert-danger d-none rounded-3 position-absolute alert-dismissible fade show w-75 mx-auto"
-			role="alert"
-			id="dangerAlert">
-			<strong>Something Wrong Happened.</strong> Try another Time.
-			<button
-				type="button"
-				class="btn-close"
-				data-bs-dismiss="alert"
-				aria-label="Close"></button>
-		</div>
+
 		<section class="weather">
 			<div
 				class="my-container  col-lg-10 mx-auto mb-4 rounded-3 shadow-sm p-3 position-relative gap-3 ">
 				<div class="my-loader d-none">
 					<span class="loader"></span>
+				</div>
+				<div class="alert alert-danger d-none alert-dismissible fade show" role="alert"
+					id="dangerAlert">
+					<strong>Something Wrong Happened.</strong> Try another Time.
+					<button type="button" class="btn-close" data-bs-dismiss="alert"
+						aria-label="Close"></button>
 				</div>
 				<div class="row justify-content-center align-items-center my-inner">
 					<div class="col-xl-4 rounded-3 drop-blur my-4">
@@ -151,13 +147,13 @@
 									<div class="col-xl-4 ">
 										<div class="wind bg-white text-center rounded-3 shadow-sm p-3">
 											<div class="title d-flex justify-content-between">
-												<span class="fw-bold">Wind</span>
+												<span>Wind</span>
 												<span class="icon">
 													<i class="fa-solid fa-wind"></i>
 												</span>
 											</div>
 											<div class=" my-3">
-												<span id="wind-speed" class="fs-1 fw-bold pt-2">18</span>
+												<span id="wind-speed" class="fs-1 pt-2">18</span>
 												<span class="fs-3 pt-2">km/h</span>
 											</div>
 										</div></div>
@@ -170,7 +166,7 @@
 												</span>
 											</div>
 											<div class=" my-3">
-												<span class="fs-1 fw-bold pt-2 rain-chance">75</span>
+												<span class="fs-1 pt-2 rain-chance">75</span>
 												<span class="fs-2 pt-2">%</span>
 											</div>
 										</div></div>
@@ -182,7 +178,7 @@
 												<span class="icon"><i class="fa-regular fa-compass"></i></span>
 											</div>
 											<div class="w-100 ">
-												<p class="fs-6 fw-bold pt-2 w-100 wind-dir">North</p>
+												<p class="fs-6 pt-2 w-100 wind-dir">North</p>
 												<div>
 													<i class="fa-solid fa-location-arrow wind-arr"></i>
 												</div>
@@ -207,13 +203,13 @@
 							<label for="floatingSearch">Type Your Email to Subscribe</label>
 
 						</div></div>
-					<div class="col-xl-2"><button
+					<div class="col-xl-2 pt-2"><button
 							id="subscribeBtn"
 							type="button"
 							class="btn btn-primary rounded-3 shadow-sm">
 							Subscribe
 						</button></div>
-					<div class="col-xl-6 d-flex justify-content-center">
+					<div class="col-xl-6 d-flex pt-2 justify-content-center">
 						<div class="icons">
 							<div class="icon"><i class="fa-brands fa-facebook"></i></div>
 							<div class="icon"><i class="fa-brands fa-google-plus-g"></i></div>

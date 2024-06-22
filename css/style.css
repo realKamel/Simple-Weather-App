@@ -8,8 +8,6 @@
   box-sizing: border-box;
 }
 
-
-
 .rain-sky {
   background-image: url(../images/rain-sky.svg);
   background-position: top center;
@@ -50,7 +48,8 @@
   background-position: center center;
   background-size: cover;
 }
-.clear-sky , .sunny-sky {
+.clear-sky,
+.sunny-sky {
   background-image: url(../images/clear-sky.jpg);
   background-position: center center;
   background-size: cover;
@@ -149,13 +148,8 @@ nav .nav-item:hover :not(.active) {
     transform: scale(1);
   }
 }
-
-
 .alert-danger {
-  margin-top: 15px;
   z-index: 100;
-  left: 50%;
-  transform: translateX(-50%);
 }
 .degree span.my-degree {
   font-size: 7rem;
@@ -166,7 +160,7 @@ nav .nav-item:hover :not(.active) {
 }
 
 i.fa-location-arrow {
-  font-size: 3rem;
+  font-size: 2.8rem;
   transform: rotate(-45deg);
   transition: all 0.5s;
 }
